@@ -1,0 +1,95 @@
+﻿@page "/"
+@model Ilies_Dragos_Restaurant.Pages.Restaurants.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<!-- Formularul de Căutare -->
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Name / Category:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-page="./Index">Back to full List</a>
+        </p>
+    </div>
+</form>
+
+<!-- Tabelul cu Sortare -->
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Restaurant[0].Nume)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].Adresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].Descriere)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].OrarFunctionare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].Menu.MenuName)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CategorySort">
+                    Categories
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RestaurantD.Restaurants)
+        {
+            string selectedRow = "";
+            if (item.ID == Model.RestaurantID)
+            {
+                selectedRow = "table-success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descriere)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrarFunctionare)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Menu.MenuName)
+                </td>
+                <td>
+                    @{
+                        var categoryNames = item.RestaurantCategoryAssignments.Select(c => c.RestaurantCategory.CategoryName).ToList();
+                        foreach (var categoryName in categoryNames)
+                        {
+                            @Html.Raw(categoryName + "<br />")
+                        }
+                    }
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

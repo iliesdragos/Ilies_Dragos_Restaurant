@@ -1,0 +1,74 @@
+﻿@page
+@model Ilies_Dragos_Restaurant.Pages.Restaurants.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Restaurant</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Restaurant.Nume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Restaurant.Nume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Restaurant.Adresa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Restaurant.Adresa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Restaurant.Descriere)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Restaurant.Descriere)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Restaurant.OrarFunctionare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Restaurant.OrarFunctionare)
+        </dd>
+    </dl>
+</div>
+
+@if (Model.Restaurant.Menu != null && Model.Restaurant.Menu.MenuItems != null && Model.Restaurant.Menu.MenuItems.Any())
+{
+    <div>
+        <h4>Menu Items</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var menuItem in Model.Restaurant.Menu.MenuItems)
+                {
+                    <tr>
+                        <td>@menuItem.Name</td>
+                        <td>@menuItem.Description</td>
+                        <td>@menuItem.Price.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>This restaurant does not have a menu or menu items defined.</p>
+}
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Restaurant.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
