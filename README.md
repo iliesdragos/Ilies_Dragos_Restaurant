@@ -79,9 +79,3 @@ To set up the project locally, follow these steps:
 - **Additional Authentication Providers**: Integrate Google or Facebook login options.
 - **User Reviews**: Allow users to add reviews and ratings for each restaurant.
 - **Advanced Filters**: Enhance the search with filters for specific menu items or restaurant categories.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-
