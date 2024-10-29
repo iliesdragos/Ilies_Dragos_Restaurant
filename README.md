@@ -1,5 +1,10 @@
 # Restaurant Management Application
 
+![C#](https://img.shields.io/badge/C%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![ASP.NET](https://img.shields.io/badge/ASP.NET-%235C2D91.svg?style=for-the-badge&logo=dot-net&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+
 A full-stack web application developed in C# designed for managing restaurant data, including menus, categories, and members. This application enables administrators to add, edit, and delete restaurant data, while regular users can browse restaurant details, view menu items, and filter options. Built with ASP.NET Core MVC, this project demonstrates the use of role-based access control, CRUD functionality, and a responsive UI.
 
 ![Restaurant Application Screenshot](https://github.com/iliesdragos/Ilies_Dragos_Restaurant/blob/master/screenshots/index.png)
