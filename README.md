@@ -2,7 +2,7 @@
 
 A full-stack web application developed in C# designed for managing restaurant data, including menus, categories, and members. This application enables administrators to add, edit, and delete restaurant data, while regular users can browse restaurant details, view menu items, and filter options. Built with ASP.NET Core MVC, this project demonstrates the use of role-based access control, CRUD functionality, and a responsive UI.
 
-![Restaurant Application Screenshot](https://github.com/iliesdragos/Ilies_Dragos_Restaurant/screenshots/index.png)
+![Restaurant Application Screenshot](https://github.com/iliesdragos/Ilies_Dragos_Restaurant/blob/master/screenshots/index.png)
 
 ## Features
 
