@@ -5,6 +5,8 @@
 ![ASP.NET](https://img.shields.io/badge/ASP.NET-%235C2D91.svg?style=for-the-badge&logo=dot-net&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
+## Project Overview
+
 A full-stack web application developed in C# designed for managing restaurants data, including menus, categories, and members. This application enables administrators to add, edit, and delete restaurants data, while regular users can browse restaurant details, view menu items, and filter options. Built with ASP.NET Core MVC, this project demonstrates the use of role-based access control, CRUD functionality, and a responsive UI.
 
 ![Restaurant Application Screenshot](https://github.com/iliesdragos/Ilies_Dragos_Restaurant/blob/master/screenshots/index.png)
@@ -69,10 +71,6 @@ To set up the project locally, follow these steps:
      ```bash
      dotnet run
      ```
-## Running the Project
-
-- **Admin Account**: Log in with an admin account to access all management features (add/edit/delete).
-- **User Account**: Log in with a regular account to view restaurant details without editing permissions.
 
 ## Future Improvements
 
